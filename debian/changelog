@@ -2,6 +2,9 @@ btftm (1.0.2-3) UNRELEASED; urgency=medium
 
   * fix packaging version to 1.0.2-3, tag(260604)
 
+  [ Axiom Test ]
+  * Axiom test for ubuntu
+
  -- geyi <geyi@qti.qualcomm.com>  Fri, 31 Jul 2026 22:28:40 +0800
 
 btftm (1.0.2-2) UNRELEASED; urgency=medium
