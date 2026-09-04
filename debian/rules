@@ -15,9 +15,9 @@ override_dh_auto_clean:
 	:
 
 override_dh_auto_install:
-	# -------- Btdiag--------
-	mkdir -p debian/btdiag/usr/bin
-	cp -a data/btdiag/arm64/usr/bin/* debian/btdiag/usr/bin/
+	# -------- btftmdaemon--------
+	mkdir -p debian/btftmdaemon/usr/bin
+	cp -a data/btftmdaemon/arm64/usr/bin/* debian/btftmdaemon/usr/bin/
 
 override_dh_install:
 	:

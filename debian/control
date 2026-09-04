@@ -2,13 +2,22 @@ Source: btftm
 Section: utils
 Priority: optional
 Maintainer: Wei Deng <weiden@qti.qualcomm.com>
-Build-Depends: 
+Build-Depends:
 	debhelper-compat (= 13),
+	pkg-config,
+	qcom-libdiag-dev,
+    libglib2.0-dev,
 Standards-Version: 4.6.2
 Rules-Requires-Root: no
-
 Package: btdiag
 Architecture: arm64
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Qualcomm Bluetooth Diagnostic tool (Btdiag)
  Standalone Bluetooth diagnostic utility built from ftm/BtDiag_O_release.
+Package: btftmdaemon
+Architecture: arm64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Qualcomm Bluetooth FTM daemon (BlueZ HCI socket variant)
+ Bluetooth factory test mode daemon that talks to the BT controller over
+ the BlueZ HCI user-channel socket and receives FTM commands over the
+ Qualcomm diag command channel (USB) or a TCP/IP diag channel.

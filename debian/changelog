@@ -1,3 +1,11 @@
+btftm (1.0.3-1) UNRELEASED; urgency=medium
+
+  * Add btftmdaemon package back, rebuilt on the BlueZ HCI user-channel
+    socket transport (no proprietary vendor HAL/HIDL dependency) with an
+    added TCP/IP diag channel alongside the existing USB diag channel，tag(260821).
+
+ -- geyi <geyi@qti.qualcomm.com>  Thu, 03 Sep 2026 16:51:38 +0800
+
 btftm (1.0.2-3) UNRELEASED; urgency=medium
 
   * fix packaging version to 1.0.2-3, tag(260604)
