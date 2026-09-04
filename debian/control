@@ -9,11 +9,13 @@ Build-Depends:
     libglib2.0-dev,
 Standards-Version: 4.6.2
 Rules-Requires-Root: no
+
 Package: btdiag
 Architecture: arm64
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Qualcomm Bluetooth Diagnostic tool (Btdiag)
  Standalone Bluetooth diagnostic utility built from ftm/BtDiag_O_release.
+
 Package: btftmdaemon
 Architecture: arm64
 Depends: ${shlibs:Depends}, ${misc:Depends}
