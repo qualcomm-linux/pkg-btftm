@@ -1,38 +1,18 @@
-#!/usr/bin/make -rRf
+#!/usr/bin/make -f
 
-export DH_VERBOSE=1
+export DH_VERBOSE = 1
 
 %:
 	dh $@
 
-override_dh_auto_configure:
-	:
-
-override_dh_auto_build:
-	:
-
-override_dh_auto_clean:
-	:
-
 override_dh_auto_install:
-	# -------- btdiag --------
-	mkdir -p debian/btdiag/usr/bin
-	cp -a btdiag/arm64/usr/bin/* debian/btdiag/usr/bin/
-	# -------- btftmdaemon--------
-	mkdir -p debian/btftmdaemon/usr/bin
-	cp -a btftmdaemon/arm64/usr/bin/* debian/btftmdaemon/usr/bin/
-
-override_dh_install:
+ifeq ($(DEB_HOST_ARCH),arm64)
+	mkdir -p $(CURDIR)/debian/btdiag/usr/bin
+	cp -a btdiag/arm64/usr/bin/* $(CURDIR)/debian/btdiag/usr/bin/
+	mkdir -p $(CURDIR)/debian/btftmdaemon/usr/bin
+	cp -a btftmdaemon/arm64/usr/bin/* $(CURDIR)/debian/btftmdaemon/usr/bin/
+endif
 	:
 
-override_dh_strip:
-	:
-
-override_dh_dwz:
-	:
-
-override_dh_shlibdeps:
-	:
-
-override_dh_fixperms:
-	:
+# binaries are already stripped
+override_dh_dwz: ;
