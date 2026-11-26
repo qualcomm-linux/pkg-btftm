@@ -1,8 +1,23 @@
 btftm (1.0.3-2~) UNRELEASED; urgency=medium
 
-  * WIP — update changelog before next release
+  [ Keerthi Gowda ]
+  * debian/control: switch to Build-Depends-Arch for arm64-specific
+      libraries, drop Priority/Rules-Requires-Root, bump
+      Standards-Version to 4.7.4, set Section to non-free/utils, add
+      Vcs-Browser/Vcs-Git, and switch to ${shlibs:Depends}/${misc:Depends}
+  * debian/rules: restore the executable bit, fix shebang, and simplify
+      to a single override_dh_auto_install and override_dh_dwz, letting
+      dh_strip/dh_shlibdeps/dh_fixperms run with default debhelper
+      behaviour so the declared Depends match btftmdaemon's actual
+      libdiag runtime dependency
+  * debian/source/options: add extend-diff-ignore for .github and
+      .gitignore
+  * debian/gbp.conf: add gbp-buildpackage configuration
+  * debian/source/lintian-overrides: add overrides for prebuilt-binary
+      source package
+  * .gitignore: add root .gitignore for build artifacts
 
- -- Wei Deng <weiden@qti.qualcomm.com>  Tue, 08 Sep 2026 03:02:51 +0000
+ -- Keerthi Gowda <kbalehal@qti.qualcomm.com>  Thu, 12 Nov 2026 21:30:00 +0000
 
 btftm (1.0.3-1) resolute; urgency=medium
 
